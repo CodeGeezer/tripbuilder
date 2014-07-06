@@ -11,7 +11,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140629210359) do
+ActiveRecord::Schema.define(version: 20140706190024) do
+
+  create_table "components", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.date     "start"
+    t.date     "end"
+    t.decimal  "lat"
+    t.decimal  "lon"
+    t.text     "comments"
+    t.string   "rescode"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "trip_components", id: false, force: true do |t|
+    t.integer "trip_id"
+    t.integer "component_id"
+  end
+
+  create_table "trips", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.time     "start"
+    t.time     "end"
+    t.string   "theme"
+    t.string   "region"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  add_index "trips", ["user_id"], name: "index_trips_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "firstname"

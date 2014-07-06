@@ -1,7 +1,10 @@
 TripBuilder::Application.routes.draw do
 
 
+
 devise_for :users
+
+get '/users/index' 
 
 root 'welcome#index'
 
