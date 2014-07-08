@@ -1,9 +1,9 @@
 TripBuilder::Application.routes.draw do
 
 
-devise_for :users
+root 'welcome#index'
 
-root 'trips#show'
+devise_for :users
 
 resources :trips 
 
