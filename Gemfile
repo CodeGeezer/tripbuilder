@@ -7,8 +7,7 @@ ruby '2.1.1'
 gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
-gem 'sql
-ite3', group: :development
+gem 'sqlite3', group: :development
 
 group :production do
       gem 'pg'
