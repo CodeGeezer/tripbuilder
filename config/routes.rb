@@ -1,13 +1,11 @@
 TripBuilder::Application.routes.draw do
 
 
-
 devise_for :users
 
-get '/users/index' 
+root 'trips#show'
 
-root 'welcome#index'
-
+resources :trips 
 
 
 
