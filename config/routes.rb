@@ -6,6 +6,7 @@ root 'welcome#index'
 devise_for :users
 
 resources :trips 
+resources :components
 
 
 
