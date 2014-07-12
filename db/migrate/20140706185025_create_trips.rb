@@ -3,11 +3,12 @@ class CreateTrips < ActiveRecord::Migration
     create_table :trips do |t|
       t.string :name
       t.text :description
-      t.time :start
-      t.time :end
+      t.date :start
+      t.date :end
       t.string :theme
       t.string :region
-
+      t.integer :user_id
+      
       t.timestamps
     end
   end

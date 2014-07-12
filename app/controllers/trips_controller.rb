@@ -17,7 +17,7 @@ def new
 end
 
 def create
-  if Trip.create(trip_params) then redirect_to "/"
+  if Trip.create(trip_params) then redirect_to "trips/show"
   else render 'new'
   end  
 end
