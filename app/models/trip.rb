@@ -6,7 +6,7 @@ class Trip < ActiveRecord::Base
 
 belongs_to :user
 
-has_many :tripcomponents
+has_many :trip_components
 has_many :components, through: :trip_components
 
 

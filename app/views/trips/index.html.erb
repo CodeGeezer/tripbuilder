@@ -9,6 +9,34 @@
   <%= submit_tag "Search Trips" %>
 <% end %>
 
+
+<table>
+  <thead>
+    <tr>
+    <div>
+      <th><h3>Trip Name</h3></th>
+      <th><h3>Theme</h3></th>
+      <th><h3>Description</h3></th>
+      <th><h3>Region</h3></th>
+      <th><h3>Start</h3></th>
+      <th><h3>End</h3></th>
+    </div>
+    </tr>
+  </thead>
+
+ <tbody>
+ <tr> 
+  <% @trip.each do |m| %>
+   <td><%= m.name %> </td>
+   <td><%= m.theme %>  </td>
+   <td><%= m.description %>  </td>
+   <td><%= m.region %>  </td>
+   <td><time><%= m.start %></time></td>
+   <td><time><%= m.end %></time> </td>
+   </tr>
+   <% end %>
+</tbody>
+</table>
    
 <div>
 <td><%= link_to 'New', new_trip_path %>  

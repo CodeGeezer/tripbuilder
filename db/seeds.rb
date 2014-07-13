@@ -22,9 +22,9 @@ Component.create(name: 'Small Farm', description: 'Small Farm', start:  '2014-10
 
 #Load Trip_Components
 
-Tripcomponent.create(trip_id: 1, component_id: 1)
-Tripcomponent.create(trip_id: 1, component_id: 2)
-Tripcomponent.create(trip_id: 2, component_id: 3)
-Tripcomponent.create(trip_id: 2, component_id: 4)
+ComponentTrip.create(trip_id: 1, component_id: 1)
+ComponentTrip.create(trip_id: 1, component_id: 2)
+ComponentTrip.create(trip_id: 2, component_id: 3)
+ComponentTrip.create(trip_id: 2, component_id: 4)
 
 

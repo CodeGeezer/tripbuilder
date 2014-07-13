@@ -1,0 +1,2 @@
+module TripcomponentsHelper
+end

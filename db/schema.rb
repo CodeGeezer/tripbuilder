@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140710010752) do
+ActiveRecord::Schema.define(version: 20140713032316) do
 
   create_table "components", force: true do |t|
     t.string   "name"
@@ -24,23 +24,16 @@ ActiveRecord::Schema.define(version: 20140710010752) do
     t.string   "rescode"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "trip_id"
   end
 
-  create_table "trip_components", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "tripcomponents", id: false, force: true do |t|
-    t.integer "trip_id"
-    t.integer "component_id"
-  end
+  add_index "components", ["trip_id"], name: "index_components_on_trip_id"
 
   create_table "trips", force: true do |t|
     t.string   "name"
     t.text     "description"
-    t.time     "start"
-    t.time     "end"
+    t.date     "start"
+    t.date     "end"
     t.string   "theme"
     t.string   "region"
     t.datetime "created_at"

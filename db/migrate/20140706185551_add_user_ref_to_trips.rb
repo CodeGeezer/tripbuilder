@@ -1,5 +1,5 @@
 class AddUserRefToTrips < ActiveRecord::Migration
   def change
-    add_reference :trips, :user_id, index: true
+    add_reference :trips, :user, index: true
   end
 end
