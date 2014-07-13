@@ -2,7 +2,9 @@ class TripsController < ApplicationController
 #skip_before_filter :authenticate_user!
 before_action :authenticate_user!, only: [:edit, :new, :create]
 before_action :load_trip, only: [:edit, :update]
+before_action :search_results, only: [:show]
 #skip_before_action :authenticate_user!, only: :index
+attr_accessor :trip
 
 def index
   @trip = Trip.all  	
@@ -19,7 +21,7 @@ def new
 end
 
 def create
-  if Trip.create(trip_params) then render '/trips/show'
+  if Trip.create(trip_params) then redirect_to '/trips/show'
   else render 'new'
   end  
 end
@@ -42,6 +44,12 @@ private
 def trip_params
   params.require(:trip).permit(:name, :description, :region, :start, :theme, :end)
 end
+
+
+def search_results
+   @trip = Trip.search(params[:p])
+end
+
 
 
 def load_trip

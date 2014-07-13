@@ -6,9 +6,7 @@ class Trip < ActiveRecord::Base
 
 belongs_to :user
 
-has_many :trip_components
-has_many :components, through: :trip_components
-
+has_many :components
 
 def self.search(query)
 where('name LIKE :query', query: "%#{query}%")

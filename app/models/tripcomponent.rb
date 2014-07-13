@@ -1,4 +1,4 @@
-class kqjskhComponentTrip < ActiveRecord::Base
+class ComponentTrip < ActiveRecord::Base
 
 belongs_to :trip
 belongs_to :component
