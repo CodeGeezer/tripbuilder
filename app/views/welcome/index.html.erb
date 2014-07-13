@@ -1,6 +1,65 @@
 <h1> Welcome to the Trip Builder App </h1>
 
+
+<table>
+  <thead>
+    <tr>
+    <div>
+      <th><h3>Trip Name</h3></th>
+      <th><h3>Theme</h3></th>
+      <th><h3>Description</h3></th>
+      <th><h3>Region</h3></th>
+      <th><h3>Start</h3></th>
+      <th><h3>End</h3></th>
+    </div>
+    </tr>
+  </thead>
+
+ <tbody>
+ <tr> 
+  <% @trip.each do |m| %>
+   <td><%= m.name %> </td>
+   <td><%= m.theme %>  </td>
+   <td><%= m.description %>  </td>
+   <td><%= m.region %>  </td>
+   <td><time><%= m.start %></time></td>
+   <td><time><%= m.end %></time> </td>
+   </tr>
+   <% end %>
+</tbody>
+</table>
+   
+<table>
+  <thead>
+    <tr>
+    <div>
+      <th><h3>Component Name</h3></th>
+      <th><h3>Description</h3></th>
+      <th><h3>Start</h3></th>
+      <th><h3>End</h3></th>
+      <th><h3>Latitude</h3></th> 
+      <th><h3>Longitude</h3></th>
+
+    </div>
+    </tr>
+  </thead>
+
+ <tbody>
+ <tr> 
+  <% @component.each do |m| %>
+   <td><%= m.name %> </td>
+   <td><%= m.description %>  </td>
+   <td><%= m.start%>  </td>
+   <td><%= m.end %>  </td>
+   <td><%= m.lat%>  </td>
+   <td><%= m.lon%>  </td>
+   </tr>
+   <% end %>
+</tbody>
+</table>
+
   
 <td><%= link_to 'Login', new_user_session_path %> </td>>  
-<td><%= link_to 'New', new_trip_path %> </td>  
+<td><%= link_to 'New Trip', new_trip_path %> </td> 
+<td><%= link_to 'New Component', new_component_path %> </td>   
 <td><%= link_to 'Back', trips_path %> </td> 

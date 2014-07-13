@@ -1,0 +1,47 @@
+
+
+<h1> ******* TripBuilder! ******** </h1>
+<h2> Edit your trip </h2>
+
+
+<%= form_for(@trip) do |f| %>
+	<div class "field">
+	<%= f.label :name %><br>
+	<%= f.text_field :name %>
+	</div>
+	
+	<div class = "field">
+	<%= f.label :description %><br>
+	<%= f.text_field :description %>
+	</div>
+    
+    <div class = "field">
+	<%= f.label :theme %><br>
+	<%= f.text_field :theme %>
+	</div>
+
+    <div class = "field">
+	<%= f.label :region %><br>
+	<%= f.text_field :region %>
+	</div>
+
+    <div class = "field">
+	<%= f.label :start %><br>
+	<%= f.date_field :start %>
+	</div>
+
+    <div class = "field">
+	<%= f.label :end %><br>
+	<%= f.date_field :end %>
+	</div>
+
+	<%= f.submit %>
+	<% end %>
+	
+<td>
+ <%= link_to 'Trips', trips_path %>  
+ <%= link_to 'Components', components_path %>
+ <%= link_to 'Add Components', new_component_path %>
+</td>
+
+

@@ -3,8 +3,8 @@ TripBuilder::Application.routes.draw do
 
 root 'welcome#index'
 
-devise_for :users
 
+devise_for :users
 resources :trips 
 resources :components
 
