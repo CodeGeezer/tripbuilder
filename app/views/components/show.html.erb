@@ -4,14 +4,12 @@
 <h2> Component Search Results </h2>
 
 
-<table>
+<table class="table table-hover"  >
   <thead>
     <tr>
     <div>
       <th><h3>Component Name</h3></th>
       <th><h3>Description</h3></th>
-      <th><h3>Start</h3></th>
-      <th><h3>End</h3></th>
       <th><h3>Latitude</h3></th> 
       <th><h3>Longitude</h3></th>
 
@@ -22,12 +20,10 @@
  <tbody>
  <tr> 
   <% @component.each do |m| %>
-   <td><%= m.name %> </td>
-   <td><%= m.description %>  </td>
-   <td><%= m.start%>  </td>
-   <td><%= m.end %>  </td>
-   <td><%= m.lat%>  </td>
-   <td><%= m.lon%>  </td>
+   <td class="active"><%= m.name %> </td>
+   <td class="active"><%= m.description %>  </td>
+   <td class="active"><%= m.lat%>  </td>
+   <td class="active"><%= m.lon%>  </td>
    </tr>
    <% end %>
 </tbody>

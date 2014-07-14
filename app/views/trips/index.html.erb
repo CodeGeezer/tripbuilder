@@ -4,13 +4,13 @@
 <h1> ******* Welcome to TripBuilder! ******** </h1>
 <h2> Current Trips </h2>
 
-<%= form_tag "trips", method: "GET" do %>
+<%= form_tag "trips/show", method: "GET" do %>
     <%= text_field_tag :p, params[:p] %>
   <%= submit_tag "Search Trips" %>
 <% end %>
 
 
-<table>
+<table class="table table-bordered" >
   <thead>
     <tr>
     <div>
@@ -27,12 +27,12 @@
  <tbody>
  <tr> 
   <% @trip.each do |m| %>
-   <td><%= m.name %> </td>
-   <td><%= m.theme %>  </td>
-   <td><%= m.description %>  </td>
-   <td><%= m.region %>  </td>
-   <td><time><%= m.start %></time></td>
-   <td><time><%= m.end %></time> </td>
+   <td class="active"> <%= m.name %> </td>
+   <td class="active"> <%= m.theme %>  </td>
+   <td class="active"> <%= m.description %>  </td>
+   <td class="active"> <%= m.region %>  </td>
+   <td class="active"> <time><%= m.start %></time></td>
+   <td class="active"> <time><%= m.end %></time> </td>
    </tr>
    <% end %>
 </tbody>

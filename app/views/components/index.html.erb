@@ -9,14 +9,12 @@
 <% end %>
 
 
-<table>
-  <thead>
+<table class="table table-striped" >
+ <thead>
     <tr>
     <div>
       <th><h3>Component Name</h3></th>
       <th><h3>Description</h3></th>
-      <th><h3>Start</h3></th>
-      <th><h3>End</h3></th>
       <th><h3>Latitude</h3></th> 
       <th><h3>Longitude</h3></th>
 
@@ -29,8 +27,6 @@
   <% @component.each do |m| %>
    <td><%= m.name %> </td>
    <td><%= m.description %>  </td>
-   <td><time><%= m.start %></time></td>
-   <td><time><%= m.end %></time> </td>
    <td><%= m.lat%>  </td>
    <td><%= m.lon%>  </td>
    </tr>

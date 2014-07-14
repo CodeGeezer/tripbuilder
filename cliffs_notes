@@ -1,0 +1,17 @@
+select t.id, tc.trip_id, c.id, tc.component_id,t.name,c.name, region,theme,t.start,t.end, c.start,c.end from trips t, components c , tripcomponents tc where tc.trip_id = t.id and tc.component_id = c.id
+
+
+  def update
+    if @movie.update(safe_movie_params)
+      redirect_to @movie
+    else
+      render 'edit'
+    end
+  end
+
+  <h1><%= @movie.title %></h1>
+<%= image_tag @rotten_poster, size: "100x150" %>
+<h3>Rotten Tomatoes Score: <%= @rotten_score %>
+<p><%= @movie.description %></p>
+
+<%= link_to "Edit", edit_movie_path(@movie) %>
